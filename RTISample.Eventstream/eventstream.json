@@ -1,0 +1,43 @@
+{
+  "sources": [
+    {
+      "id": "2df6c742-d007-49f3-b3c6-10b499a6f045",
+      "name": "Bicycles",
+      "type": "SampleData",
+      "properties": {
+        "type": "Bicycles"
+      }
+    }
+  ],
+  "destinations": [
+    {
+      "id": "3e68f929-ce48-4a77-9297-34ade8977a18",
+      "name": "e8247dec-dc1d-4f68-a97c-940a74e3cbdf",
+      "type": "Eventhouse",
+      "properties": {
+        "dataIngestionMode": "DirectIngestion",
+        "workspaceId": "00000000-0000-0000-0000-000000000000",
+        "itemId": "71c6ef4a-1e25-af2a-40c2-18158f15f417",
+        "tableName": "Bikestream",
+        "connectionName": "RTISample_data_connection",
+        "mappingRuleName": "Bikestream_Mapping"
+      },
+      "inputNodes": [
+        {
+          "name": "RTISample-stream"
+        }
+      ]
+    }
+  ],
+  "streams": [
+    {
+      "id": "7bdd268b-f426-4054-a2a6-3dbdc7d7c551",
+      "name": "RTISample-stream",
+      "type": "DefaultStream",
+      "properties": {},
+      "inputNodes": []
+    }
+  ],
+  "operators": [],
+  "compatibilityLevel": "1.1"
+}

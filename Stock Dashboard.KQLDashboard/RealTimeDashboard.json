@@ -1,0 +1,105 @@
+{
+  "schema_version": 74,
+  "autoRefresh": {
+    "enabled": true,
+    "defaultInterval": "30m"
+  },
+  "tiles": [
+    {
+      "id": "77aad48d-517d-478c-b385-ee5336c49881",
+      "title": "Average Prices",
+      "visualType": "column",
+      "pageId": "71fafc9a-7bea-4538-899d-957c85a9ce8f",
+      "layout": {
+        "x": 0,
+        "y": 0,
+        "width": 9,
+        "height": 7
+      },
+      "queryRef": {
+        "kind": "query",
+        "queryId": "fe8c6d11-9d6e-4b32-bb0e-63216e577b5b"
+      },
+      "visualOptions": {
+        "multipleYAxes": {
+          "base": {
+            "id": "-1",
+            "label": "",
+            "columns": [],
+            "yAxisMaximumValue": null,
+            "yAxisMinimumValue": null,
+            "yAxisScale": "linear",
+            "horizontalLines": []
+          },
+          "additional": [],
+          "showMultiplePanels": false
+        },
+        "seriesColors": {},
+        "hideLegend": false,
+        "legendLocation": "bottom",
+        "xColumnTitle": "",
+        "xColumn": null,
+        "yColumns": null,
+        "seriesColumns": null,
+        "xAxisScale": "linear",
+        "verticalLine": "",
+        "crossFilterDisabled": false,
+        "drillthroughDisabled": false,
+        "forceAxisTicks": false,
+        "crossFilter": [],
+        "drillthrough": [],
+        "selectedDataOnLoad": {
+          "all": true,
+          "limit": 10
+        }
+      }
+    }
+  ],
+  "baseQueries": [],
+  "parameters": [
+    {
+      "kind": "duration",
+      "id": "1b76fb1f-d924-4dca-aaab-ef5d908a5974",
+      "displayName": "Time range",
+      "description": "",
+      "beginVariableName": "_startTime",
+      "endVariableName": "_endTime",
+      "defaultValue": {
+        "kind": "dynamic",
+        "count": 1,
+        "unit": "hours"
+      },
+      "showOnPages": {
+        "kind": "all"
+      }
+    }
+  ],
+  "dataSources": [
+    {
+      "id": "0e5428c4-4d71-49a4-9b49-71fb0b1a3439",
+      "kind": "kusto-trident",
+      "name": "Eventhouse_Stock",
+      "clusterUri": "",
+      "databaseArtifactId": "e4dff1bf-ddb6-40c7-b5f1-2f67fd6144eb",
+      "database": "fd6144eb-2f67-b5f1-40c7-ddb6e4dff1bf",
+      "workspace": "00000000-0000-0000-0000-000000000000"
+    }
+  ],
+  "pages": [
+    {
+      "name": "Page 1",
+      "id": "71fafc9a-7bea-4538-899d-957c85a9ce8f"
+    }
+  ],
+  "queries": [
+    {
+      "dataSource": {
+        "kind": "inline",
+        "dataSourceId": "0e5428c4-4d71-49a4-9b49-71fb0b1a3439"
+      },
+      "text": "stock_table\n | where [\"time\"] > ago(5m)\n | summarize avgPrice = avg(todecimal(bidPrice)) by symbol\n | project symbol, avgPrice",
+      "id": "fe8c6d11-9d6e-4b32-bb0e-63216e577b5b",
+      "usedVariables": []
+    }
+  ]
+}

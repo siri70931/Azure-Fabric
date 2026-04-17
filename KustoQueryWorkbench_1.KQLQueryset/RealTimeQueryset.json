@@ -1,0 +1,22 @@
+{
+  "queryset": {
+    "version": "1.0.0",
+    "dataSources": [
+      {
+        "id": "bfc83851-7353-424b-a4fe-b4f732c3fd53",
+        "clusterUri": "",
+        "type": "Fabric",
+        "databaseItemId": "71c6ef4a-1e25-af2a-40c2-18158f15f417",
+        "databaseItemName": "RTISample"
+      }
+    ],
+    "tabs": [
+      {
+        "id": "d7e5a59b-6f9e-4901-9085-b8e612965342",
+        "content": " SELECT CASE\n          WHEN Neighbourhood IS NULL OR Neighbourhood = '' THEN 'Unidentified'\n          ELSE Neighbourhood\n        END AS Neighbourhood,\n        SUM(No_Bikes) AS [Total Number of Bikes]\n FROM Bikestream\n GROUP BY CASE\n            WHEN Neighbourhood IS NULL OR Neighbourhood = '' THEN 'Unidentified'\n            ELSE Neighbourhood\n          END\n ORDER BY Neighbourhood ASC;",
+        "title": "Tab",
+        "dataSourceId": "bfc83851-7353-424b-a4fe-b4f732c3fd53"
+      }
+    ]
+  }
+}

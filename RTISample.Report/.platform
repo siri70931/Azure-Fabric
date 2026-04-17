@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "RTISample"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "c18c0a1b-59e6-ad59-403f-0c3cb3f59407"
+  }
+}

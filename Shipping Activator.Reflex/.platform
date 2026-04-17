@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Reflex",
+    "displayName": "Shipping Activator"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "91ceb001-5b74-915a-463e-9150db44c2a5"
+  }
+}

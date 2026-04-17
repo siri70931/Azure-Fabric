@@ -1,0 +1,22 @@
+{
+  "queryset": {
+    "version": "1.0.0",
+    "dataSources": [
+      {
+        "id": "5c1ead38-cc01-46ee-a9dd-700ff5f4bed1",
+        "clusterUri": "https://trd-bqsv5jrdbwgwh0kx7t.z9.kusto.fabric.microsoft.com",
+        "type": "Fabric",
+        "databaseItemId": "e4dff1bf-ddb6-40c7-b5f1-2f67fd6144eb",
+        "databaseItemName": "Eventhouse_Stock"
+      }
+    ],
+    "tabs": [
+      {
+        "id": "8f4201c2-0b0d-4703-81ce-8046e4842b88",
+        "content": "//***********************************************************************************************************\n// Here are two articles to help you get started with KQL:\n// KQL reference guide - https://aka.ms/KQLguide\n// SQL - KQL conversions - https://aka.ms/sqlcheatsheet\n//***********************************************************************************************************\n\n// Use \"take\" to view a sample number of records in the table and check the data.\nstock_table\n| take 100\n\n stock_table\n | where [\"time\"] > ago(5m)\n | summarize avgPrice = avg(todecimal(bidPrice)) by symbol\n | project symbol, avgPrice\n",
+        "title": "Tab",
+        "dataSourceId": "5c1ead38-cc01-46ee-a9dd-700ff5f4bed1"
+      }
+    ]
+  }
+}
